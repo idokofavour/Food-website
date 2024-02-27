@@ -8,14 +8,15 @@ function App() {
   const [query, setQuery] = useState("")
   const [foodData, setFoodData] = useState([])
   const [singleFoodData, setSingleFoodData] = useState([])
-  const [mealId, setMealId] = useState()
+  const [foodId, setFoodId] = useState()
+
 
   return (
     <div>
-       <SearchBar query={query} setQuery={setQuery} setFoodData={setFoodData} setSingleFoodData={setSingleFoodData} />
+       <SearchBar query={query} setQuery={setQuery} setFoodData={setFoodData} setSingleFoodData={setSingleFoodData}  />
 
       { query==="" ? 
-          < RandomFoodList foodData={foodData}/>: 
+          < RandomFoodList foodData={foodData} foodId={foodId} setFoodId={setFoodId} />: 
           <SearchedFoodResultList singleFoodData={singleFoodData}/>
       }
 
