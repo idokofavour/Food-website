@@ -1,41 +1,43 @@
 import { useState } from 'react'
 import './App.css'
 import SearchBar from './Components/SearchBar'
-import RandomFoodList from './Components/RandomFoodList'
-import SearchedFoodResultList from './Components/SearchedFoodResultList'
+import { Route, Routes } from "react-router-dom";
+import FoodRecipe from './Components/FoodRecipe'
+
 
 function App() {
   const [query, setQuery] = useState("")
   const [foodData, setFoodData] = useState([])
-  const [singleFoodData, setSingleFoodData] = useState([])
-  const [foodId, setFoodId] = useState()
+  const [foodId, setFoodId] = useState(52855)
 
 
   return (
-    <div>
-       <SearchBar query={query} setQuery={setQuery} setFoodData={setFoodData} setSingleFoodData={setSingleFoodData}  />
+      <div>
 
-      { query==="" ? 
-          < RandomFoodList foodData={foodData} foodId={foodId} setFoodId={setFoodId} />: 
-          <SearchedFoodResultList singleFoodData={singleFoodData}/>
-      }
+          
 
-
-
-
-
-
-
+          
+        <Routes>
+          <Route path='/' element={
+          <SearchBar query={query} setQuery={setQuery} foodData={foodData} 
+          setFoodData={setFoodData} foodId={foodId} setFoodId={setFoodId} />
+          } />
+          <Route path='/FoodRecipe' element={<FoodRecipe foodId={foodId}/>} />
+        </Routes>
 
 
 
+       
 
-       {/* <SearchBar setFoodData={setFoodData} setSingleFoodData={setSingleFoodData} /> */}
-       {/* < RandomFoodList foodData={foodData}/>  */}
-       {/* <SingleMeal singleFoodData={singleFoodData}/> */}
 
-      {/* < RandomFoodList foodData={foodData}/> */}
-      {/* <SingleMeal singleFoodData={singleFoodData} /> */}
+
+
+
+
+
+
+
+
     </div>
   )
 }

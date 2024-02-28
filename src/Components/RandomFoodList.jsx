@@ -5,7 +5,7 @@ export default function RandomFoodList({ foodData, foodId, setFoodId }) {
     return (
         <div className={styles.parent}>
             {foodData.map((food) => 
-            <RandomFoodItem key={food.idCategory} food={food} foodId={foodId} setFoodId={setFoodId} /> 
+            <RandomFoodItem key={food.idMeal} food={food} foodId={foodId} setFoodId={setFoodId} /> 
             )}
         </div>
     )
