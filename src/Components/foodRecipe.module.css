@@ -1,0 +1,62 @@
+.linkContainer {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.Link {
+    color: #ad7600;
+    text-decoration: none;
+    border: 1px solid #333;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.Link:hover {
+    color: #f8d07b;
+}
+
+.detailsContainer {
+    color: #c29023;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    border-radius: 15px;
+    width: 500px;
+}
+
+.ingredientsContainer {
+    margin-top: 40px;
+    margin-left: 150px;
+}
+
+.ingredientsHeader {
+    margin: 1px auto;
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: -20px;
+    /* background-color: red; */
+}
+
+.instruction {
+    width: 600px;
+    line-height: 1.6;
+}
+
+.instruction p {
+    font-size: 14px;
+    margin-top: -15px;
+}
+

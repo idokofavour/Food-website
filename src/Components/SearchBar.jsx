@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from './searchBar.module.css'
 import RandomFoodList from "./RandomFoodList"
+import NotFound from "./NotFound"
 
 export default function SearchBar({query, setQuery, foodData, setFoodData, setFoodId, foodId }) {
     
@@ -32,7 +33,9 @@ export default function SearchBar({query, setQuery, foodData, setFoodData, setFo
         <div className={styles.inputContainer}>
             <input className={styles.input} type="text" value={query}  onChange={(e)=> setQuery(e.target.value)} />
         </div>
-          < RandomFoodList foodData={foodData} foodId={foodId} setFoodId={setFoodId} />: 
+         <NotFound />
+         < RandomFoodList foodData={foodData} foodId={foodId} setFoodId={setFoodId} />
+          
         </div>
     )
 }

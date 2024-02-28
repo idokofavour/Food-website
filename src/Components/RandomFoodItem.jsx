@@ -8,12 +8,10 @@ export default function FoodItem({ food, foodId, setFoodId }) {
             <div className={styles.foodContainer}>
                 <img className={styles.image} src={food.strMealThumb} />
                 <p className={styles.foodName} onClick={()=> {
-                    console.log(food.idMeal)
                     setFoodId(food.idMeal)
                     navigate('/FoodRecipe')
                 }}>{food.strMeal}</p>
             </div>
-
         </div>
     )
 }

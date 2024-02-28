@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import styles from './foodRecipe.module.css'
+
 
 export default function FoodRecipe({foodId}) {
     const [food, setFood] = useState({})
@@ -7,81 +9,58 @@ export default function FoodRecipe({foodId}) {
         async function fetchFoodRecipe() {
             const URL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`
             console.log(foodId)
-            // const res = await fetch(`${URL}?i=${foodId}`)
             const res = await fetch(`${URL}`)
             const data = await res.json()
-            console.log(data.meals)
-            console.log(foodId)
-            setFood(data)
+            setFood(data.meals[0])
         }
         fetchFoodRecipe()
     },[foodId])
     return (
         <div>
-            <Link to='/'>Click</Link>
-            <h1>Hello world</h1>
+            <div className={styles.linkContainer}>
+                <Link className={styles.Link} to='/'>Back to Home</Link>
+            </div>
+            <div className={styles.detailsContainer}>
+                <div className={styles.imageContainer}>
+                    <h3>{food.strMeal}</h3>
+                    <img className={styles.image} src={food.strMealThumb} />
+                </div>
+
+                <div className={styles.ingredientsContainer}>
+                    <h2 className={styles.ingredientsHeader}>Ingredients</h2>
+                    <div className={styles.ingredients}>
+                        <p>{food.strMeasure1} {food.strIngredient1}</p>
+                        <p>{food.strMeasure2} {food.strIngredient2}</p>
+                        <p>{food.strMeasure3} {food.strIngredient3}</p>
+                        <p>{food.strMeasure4} {food.strIngredient4}</p>
+                        <p>{food.strMeasure5} {food.strIngredient5}</p>
+                        <p>{food.strMeasure6} {food.strIngredient6}</p>
+                        <p>{food.strMeasure7} {food.strIngredient7}</p>
+                        <p>{food.strMeasure8} {food.strIngredient8}</p>
+                        <p>{food.strMeasure9} {food.strIngredient9}</p>
+                        <p>{food.strMeasure10} {food.strIngredient10}</p>
+                        <p>{food.strMeasur11} {food.strIngredient11}</p>
+                        <p>{food.strMeasure12} {food.strIngredient12}</p>
+                        <p>{food.strMeasure13} {food.strIngredient13}</p>
+                        <p>{food.strMeasure14} {food.strIngredient14}</p>
+                        <p>{food.strMeasure15} {food.strIngredient15}</p>
+                        <p>{food.strMeasure16} {food.strIngredient16}</p>
+                        <p>{food.strMeasure17} {food.strIngredient17}</p>
+                        <p>{food.strMeasure18} {food.strIngredient18}</p>
+                        <p>{food.strMeasure19} {food.strIngredient19}</p>
+                        <p>{food.strMeasure20} {food.strIngredient20}</p>
+                    </div>
+                    <div className={styles.instruction}>
+                        <h2>Instruction</h2>
+                        <p>{food.strInstructions}</p>
+                    </div>
+                </div>
+
+
+            </div>
+            {console.log(food)}
         </div>
     )
 }
 
 
-
-
-
-
-// import { useEffect, useState } from "react";
-// import styles from './movieDetails.module.css';
-// import { Link } from "react-router-dom";
-
-// export default function MovieDetails({ movieId }) {
-//     const url = `https://api.themoviedb.org/3/movie/${movieId}`;
-//     const apiKey = 'bbbfa863fae709a9395aa30f77884fc6';
-//     const [movie, setMovie] = useState({})
-//     useEffect(() => {
-//         async function fetchApi() {
-//              const res = await fetch(`${url}?api_key=${apiKey}`);
-//              const data = await res.json();
-//              console.log(data)
-//              setMovie(data)
-//         }
-//         fetchApi();
-//     },[movieId]
-//     )
-//     return (
-//         <div >
-//             <div className={styles.linkContainer}>
-//                 <Link className={styles.linkStyle} to="/movies">Back to Movies</Link>   
-//             </div>
-
-//             <div style={{backgroundImage:`url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})`,
-//                     backgroundRepeat: "no-repeat",
-//                     backgroundSize: "cover", }}>
-//                 <div  className={styles.detailsContainer}>
-//                     {
-//                         movie.poster_path ? <img className={styles.images} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt="" /> : <img src="./" alt="" />
-//                     }
-                    
-//                     <div className={styles.details}>
-//                         <h1>{movie.title}</h1>
-//                         <p><span className={styles.releaseDate} >Release Date:</span> {movie.release_date} {}</p>  
-                    
-//                         <p className={styles.tagline}>{movie.tagline}</p>
-        
-//                         <div className={styles.overviewContainer}>
-//                             <h2>Overview</h2>
-//                             <p>{movie.overview}</p>
-//                         </div>
-//                         {/* <div className={styles.producers}>
-//                             {/* <h3>{movie}</h3> */}
-//                             {/* <p>Director</p>
-//                             <h3>{}</h3>
-//                             <p>Writer</p>
-//                             <h3>{}</h3>
-//                             <p>Screenplay</p>
-//                         </div> */} 
-//                     </div>
-//             </div>
-//             </div>
-//         </div>
-//     )
-// }
