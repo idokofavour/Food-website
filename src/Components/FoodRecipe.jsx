@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import styles from './foodRecipe.module.css'
 
-
 export default function FoodRecipe({foodId}) {
     const [food, setFood] = useState({})
     useEffect(()=> {
@@ -55,8 +54,6 @@ export default function FoodRecipe({foodId}) {
                         <p>{food.strInstructions}</p>
                     </div>
                 </div>
-
-
             </div>
             {console.log(food)}
         </div>

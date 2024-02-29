@@ -1,25 +1,23 @@
 import { useEffect, useState } from "react"
 import styles from './searchBar.module.css'
 import RandomFoodList from "./RandomFoodList"
-import NotFound from "./NotFound"
-
 export default function SearchBar({query, setQuery, foodData, setFoodData, setFoodId, foodId }) {
+    const [isLoading, setIsLoading] = useState(true)
     
     useEffect(()=> {
         if(query==="") {
-            const randomFoodUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American '
-
+            setIsLoading(true)
             async function fetchRandomFood() {
-                const res = await fetch(`${randomFoodUrl}`)
+                const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=American`)
                 const data = await res.json()
                 console.log(data.meals)
+                setIsLoading(false)
                 setFoodData(data.meals)
             }
             fetchRandomFood()
         } else {
-            const singleFoodUrl= 'https://www.themealdb.com/api/json/v1/1/search.php'
             async function fetSingleFood() {
-                const res = await fetch(`${singleFoodUrl}?s=${query}`)
+                const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
                 const data = await res.json()
                 console.log(data.meals)
                setFoodData(data.meals)
@@ -28,14 +26,22 @@ export default function SearchBar({query, setQuery, foodData, setFoodData, setFo
         }
         
     }, [query])
-    return (
-        <div>
-        <div className={styles.inputContainer}>
-            <input className={styles.input} type="text" value={query}  onChange={(e)=> setQuery(e.target.value)} />
-        </div>
-         <NotFound />
-         < RandomFoodList foodData={foodData} foodId={foodId} setFoodId={setFoodId} />
-          
-        </div>
-    )
+    if(isLoading){
+        return (
+            <div className={styles.isLoadingContainer}>
+               <h2 className={styles.isLoading}>Page is Loading...</h2> 
+            </div>
+        )
+    } else {
+
+        return (
+            <div>
+                <div className={styles.inputContainer}>
+                    <input className={styles.input} type="text" value={query}  onChange={(e)=> setQuery(e.target.value)} />
+                </div>
+                < RandomFoodList foodData={foodData} foodId={foodId} setFoodId={setFoodId} />
+            </div>
+        )
+
+    }
 }
