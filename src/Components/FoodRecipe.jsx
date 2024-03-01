@@ -15,11 +15,11 @@ export default function FoodRecipe({foodId}) {
         fetchFoodRecipe()
     },[foodId])
     return (
-        <div>
+        <div className={styles.parent}>
             <div className={styles.linkContainer}>
                 <Link className={styles.Link} to='/'>Back to Home</Link>
             </div>
-            <h3 className={styles.strMeal}>{food.strMeal}</h3>
+            <h1 className={styles.strMeal}>{food.strMeal}</h1>
             <div className={styles.detailsContainer}>
                 <div className={styles.imageContainer}>
                     <img className={styles.image} src={food.strMealThumb} />

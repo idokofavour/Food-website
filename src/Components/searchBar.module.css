@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    min-width: 200px;
+    min-width: 300px;
     border-radius: 15px;
 }
 
@@ -20,4 +20,5 @@
     font-size: 16px;
     color: #393e46;
     border-radius: 15px;
+    min-width: 270px;
 }
