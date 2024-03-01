@@ -19,7 +19,14 @@
     color: #c29023;
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+
+
+
+.strMeal {
+    margin: 10px auto;
 }
 
 .imageContainer {
@@ -30,31 +37,44 @@
 
 .image {
     border-radius: 15px;
-    width: 500px;
+    max-width: 100%;
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: -20px;
+}
+
+.ingredients p {
+    margin-bottom: -3px;
 }
 
 .ingredientsContainer {
-    margin-top: 40px;
-    margin-left: 150px;
+    margin-left: 30px;
 }
 
 .ingredientsHeader {
     margin: 1px auto;
 }
 
-.ingredients {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-bottom: -20px;
-}
+
 
 .instruction {
     width: 600px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .instruction p {
     font-size: 14px;
     margin-top: -15px;
+}
+
+@media (max-width:1122px){
+    .detailsContainer {
+        display: grid;
+        grid-template: 1fr;
+    }
+    
 }
 

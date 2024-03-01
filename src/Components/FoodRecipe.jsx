@@ -19,9 +19,9 @@ export default function FoodRecipe({foodId}) {
             <div className={styles.linkContainer}>
                 <Link className={styles.Link} to='/'>Back to Home</Link>
             </div>
+            <h3 className={styles.strMeal}>{food.strMeal}</h3>
             <div className={styles.detailsContainer}>
                 <div className={styles.imageContainer}>
-                    <h3>{food.strMeal}</h3>
                     <img className={styles.image} src={food.strMealThumb} />
                 </div>
 

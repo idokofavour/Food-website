@@ -5,12 +5,12 @@ export default function FoodItem({ food, foodId, setFoodId }) {
     const navigate = useNavigate()
     return (
         <div>
-            <div className={styles.foodContainer}>
-                <img className={styles.image} src={food.strMealThumb} />
-                <p className={styles.foodName} onClick={()=> {
+            <div className={styles.foodContainer} onClick={()=> {
                     setFoodId(food.idMeal)
                     navigate('/FoodRecipe')
-                }}>{food.strMeal}</p>
+                }}>
+                <img className={styles.image} src={food.strMealThumb} />
+                <p className={styles.foodName}>{food.strMeal}</p>
             </div>
         </div>
     )

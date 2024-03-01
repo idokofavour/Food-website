@@ -1,11 +1,11 @@
-import ErrorBoundary from "./ErrorBoundray";
+import SearchErrorHandling from "./SearchErrorHandling";
 import RandomFoodItem from "./RandomFoodItem";
 import styles from './randomFoodList.module.css'
 
 export default function RandomFoodList({ foodData, foodId, setFoodId }) {
     if(foodData===null) {
         return(
-            <ErrorBoundary />
+            <SearchErrorHandling />
         )
     }
     return (
