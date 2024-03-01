@@ -1,22 +1,23 @@
 .isLoading {
-    position: absolute;
-    margin: 19% 45%;
-    text-wrap: nowrap;
+    position: relative;
+    margin: auto;
     color: rgb(204, 0, 255);
 }
 
 .inputContainer {
-    margin: 20px auto;
-    width: 30px;
-    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-width: 200px;
+    border-radius: 15px;
 }
 
 .input {
     border: none;
     border-bottom: 1px solid #e3e4dc;
     padding: 10px 20px;
-    width: 200px;
     outline: none;
     font-size: 16px;
     color: #393e46;
+    border-radius: 15px;
 }
