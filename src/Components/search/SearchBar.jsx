@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from './searchBar.module.css'
-import RandomFoodList from "./RandomFoodList"
+import RandomFoodList from "../randomFoodList/RandomFoodList"
+
 export default function SearchBar({query, setQuery, foodData, setFoodData, setFoodId, foodId }) {
     const [isLoading, setIsLoading] = useState(true)
     

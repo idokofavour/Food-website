@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import styles from './foodRecipe.module.css'
+import styles from './foodDetails.module.css'
 
-export default function FoodRecipe({foodId}) {
+export default function foodDetails({foodId}) {
     const [food, setFood] = useState({})
     useEffect(()=> {
         async function fetchFoodRecipe() {

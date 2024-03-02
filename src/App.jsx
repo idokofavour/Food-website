@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import SearchBar from './Components/SearchBar'
-// import { ErrorBoundary } from 'react-error-boundary';
+import SearchBar from './Components/search/SearchBar'
 import { Route, Routes } from "react-router-dom";
-import FoodRecipe from './Components/FoodRecipe'
-// import { FoodSearchError } from './Components/ErrorBoundray';
+import foodDetails from './Components/foodDetails/FoodDetails';
 
 function App() {
   const [query, setQuery] = useState("")
@@ -15,7 +13,7 @@ function App() {
     <div>
         <Routes>
         <Route path='/' element={<SearchBar query={query} setQuery={setQuery} foodData={foodData} setFoodData={setFoodData} foodId={foodId} setFoodId={setFoodId} />}/>
-          <Route path='/FoodRecipe' element={<FoodRecipe foodId={foodId}/>} />
+          <Route path='/FoodRecipe' element={<foodDetails foodId={foodId}/>} />
         </Routes>
     </div>
   )

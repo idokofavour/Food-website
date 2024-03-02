@@ -1,6 +1,6 @@
 import styles from './randomFoodItem.module.css'
 import {Routes, Route, useNavigate} from 'react-router-dom'
-import textTransformPipe from './utils/utils'
+import textTransformPipe from '../utils/utils'
 
 export default function FoodItem({ food, foodId, setFoodId }) {
     const navigate = useNavigate()

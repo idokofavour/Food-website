@@ -1,5 +1,5 @@
-import SearchErrorHandling from "./SearchErrorHandling";
-import RandomFoodItem from "./RandomFoodItem";
+import SearchErrorHandling from "../errorHandling/SearchErrorHandling";
+import FoodItem from "../randomFoodItems/RandomFoodItem";
 import styles from './randomFoodList.module.css'
 
 export default function RandomFoodList({ foodData, foodId, setFoodId }) {
@@ -11,7 +11,7 @@ export default function RandomFoodList({ foodData, foodId, setFoodId }) {
     return (
         <div className={styles.parent}>
             {foodData.map((food) => 
-            <RandomFoodItem key={food.idMeal} food={food} foodId={foodId} setFoodId={setFoodId} /> 
+            <FoodItem key={food.idMeal} food={food} foodId={foodId} setFoodId={setFoodId} /> 
             )}
         </div>
     )
