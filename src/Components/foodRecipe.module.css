@@ -1,8 +1,16 @@
+.parent {
+    display: grid;
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
 .linkContainer {
     position: relative;
     margin-top: 25px;
     font-size: 14px;
     margin-bottom: 35px;
+    margin-left: 18px;
 }
 
 .Link {
@@ -22,8 +30,16 @@
     margin-top: 40px;
     display: flex;
     margin-inline: auto;
+    padding: 0px 15px;
     justify-content: space-around;
 
+}
+
+
+.image {
+    border-radius: 15px;
+    width: 80%;
+    margin-bottom: 15px;
 }
 
 .strMeal {
@@ -33,10 +49,12 @@
     margin-bottom: 30px;
 }
 
-.image {
-    border-radius: 15px;
-    max-width: 80%;
-    margin-bottom: 15px;
+.ingredientsContainer {
+    max-width: 700px;
+}
+
+.ingredientsHeader {
+    margin: 1px auto;
 }
 
 .ingredients {
@@ -49,14 +67,6 @@
     margin-right: 25px;
 }
 
-.ingredientsContainer {
-    max-width: 700px;
-}
-
-.ingredientsHeader {
-    margin: 1px auto;
-}
-
 .instruction {
     max-width: 690px;
     line-height: 1.5;
@@ -67,33 +77,61 @@
     margin-top: -15px;
 }
 
+@media screen and (max-width:768px) {
+    .detailsContainer {
+        width: 90%;
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-@media (max-width:1087px){
+    .imageContainer {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .strMeal {
+        width: 100%;
+        font-size: 16px;
+        margin-right: 50px;
+    }
+    
+    .instruction {
+        width: 100%;
+        line-height: 1.5;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width:1087px){
     .detailsContainer {
        display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
        justify-content: center;
        margin-inline: auto;
        margin-left: 35px;
     }
-        .image {
-            border-radius: 15px;
-            max-width: 80%;
-            margin: auto;
-            min-height: 40%; 
-            margin-bottom: 15px;    
-        } 
 
-        .strMeal {
-            display: flex;
-            justify-content: center;
-            margin-right: 50px;
-        }
+    .image {
+        border-radius: 15px;
+        max-width: 80%;
+        margin: auto;
+        min-height: 40%; 
+        margin-bottom: 15px;    
+    } 
 
-        .instruction {
-            max-width: 500px;
-            line-height: 1.5;
-        }
+    .strMeal {
+        font-size: 18px;
+        margin-right: 50px;
+    }
+
+    .instruction {
+        max-width: 500px;
+        line-height: 1.5;
+    }
     
 }  
 

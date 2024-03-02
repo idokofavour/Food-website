@@ -6,11 +6,13 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    max-width: 75%;
+    /* max-width: 75%; */
+    width: 300px;
     padding: 20px 20px 5px 20px;
     margin-inline: auto;
     margin-bottom: 40px;
 }
+
 
 .image {
     max-width: 100%;
@@ -21,5 +23,11 @@
     color: #ad7600;
     font-size: 14px;
     max-width: 310px;
+}
+
+@media only screen and (max-width:769px) {
+    .foodContainer {
+        width: 45%;
+    }
 }
 

@@ -1,15 +1,17 @@
 .isLoading {
+    color: rgb(204, 0, 255);
     position: relative;
     margin: auto;
-    color: rgb(204, 0, 255);
+
 }
 
 .inputContainer {
     align-items: center;
-    justify-content: center;
-    display: flex;
-    min-width: 300px;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    min-width: 300px;
 }
 
 .input {
